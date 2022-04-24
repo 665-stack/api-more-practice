@@ -7,11 +7,12 @@ const loadComments = () => {
 const displayComment = comments => {
     const commentElement = document.getElementById('comment');
     for (const comment of comments) {
-        console.log(comment)
-        const p = document.createElement('p');
-        p.innerText = `body: ${comment.name}
-                       email: ${comment.email}`;
-        commentElement.appendChild(p)
+        const div = document.createElement('div');
+        div.classList.add('comment');
+        div.innerHTML = `
+        <p> body: ${comment.name}</p>  
+        <p> email: ${comment.email}</p>     
+                        `
+        commentElement.appendChild(div)
     }
-
 }
